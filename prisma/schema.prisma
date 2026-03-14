@@ -1,0 +1,73 @@
+generator client {
+    provider = "prisma-client-js"
+    output   = "../generated/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        String    @id @default(cuid())
+    name      String
+    email     String    @unique
+    role      String    @default("user")
+    createdAt DateTime  @default(now())
+    websites  Website[]
+
+    @@index([email])
+}
+
+model Website {
+    id        String    @id @default(cuid())
+    userId    String
+    domain    String
+    createdAt DateTime  @default(now())
+    user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    visits    Visit[]
+    leads     Lead[]
+    keywords  Keyword[]
+
+    @@index([userId])
+    @@index([domain])
+}
+
+model Visit {
+    id        String   @id @default(cuid())
+    websiteId String
+    page      String
+    referrer  String?
+    country   String
+    createdAt DateTime @default(now())
+    website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+
+    @@index([websiteId])
+    @@index([createdAt])
+}
+
+model Lead {
+    id        String   @id @default(cuid())
+    websiteId String
+    name      String
+    email     String
+    message   String?
+    status    String   @default("new")
+    createdAt DateTime @default(now())
+    website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+
+    @@index([websiteId])
+    @@index([status])
+}
+
+model Keyword {
+    id          String   @id @default(cuid())
+    websiteId   String
+    keyword     String
+    ranking     Int
+    lastChecked DateTime @default(now())
+    website     Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+
+    @@index([websiteId])
+    @@index([keyword])
+}
