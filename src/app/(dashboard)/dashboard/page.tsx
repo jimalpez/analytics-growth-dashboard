@@ -19,7 +19,7 @@ export default function DashboardPage() {
     <div>
       <div className="mb-8">
         <h1 className="text-2xl font-bold" style={{ color: "var(--th-text)" }}>Dashboard</h1>
-        <p className="mt-1" style={{ color: "var(--th-text-secondary)" }}>Welcome back, Alex. Here&apos;s your overview.</p>
+        <p className="mt-1" style={{ color: "var(--th-text-secondary)" }}>Welcome back, Jim. Here&apos;s your overview.</p>
       </div>
 
       <div className="mb-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

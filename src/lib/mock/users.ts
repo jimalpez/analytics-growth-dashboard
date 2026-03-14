@@ -1,5 +1,5 @@
 export const mockUsers = [
-  { id: "u1", name: "Alex Morgan", email: "alex@dashboard.com", role: "admin", createdAt: new Date("2025-06-15") },
+  { id: "u1", name: "Jim Alpez", email: "jim.alpez06@gmail.com", role: "admin", createdAt: new Date("2025-06-15") },
   { id: "u2", name: "Sarah Johnson", email: "sarah@techcorp.com", role: "user", createdAt: new Date("2025-08-22") },
   { id: "u3", name: "Michael Chen", email: "m.chen@startuplab.io", role: "user", createdAt: new Date("2025-09-10") },
   { id: "u4", name: "Emily Rodriguez", email: "emily.r@designstudio.co", role: "editor", createdAt: new Date("2025-10-05") },
@@ -11,8 +11,8 @@ export const mockUsers = [
 
 export const mockCurrentUser = {
   id: "u1",
-  name: "Alex Morgan",
-  email: "alex@dashboard.com",
+  name: "Jim Alpez",
+  email: "jim.alpez06@gmail.com",
   role: "admin",
   createdAt: new Date("2025-06-15"),
 };

@@ -136,7 +136,7 @@ export function Sidebar() {
             <span className="text-xs font-bold text-white">AM</span>
           </div>
           <div>
-            <p className="font-medium" style={{ color: "var(--th-text)" }}>Alex Morgan</p>
+            <p className="font-medium" style={{ color: "var(--th-text)" }}>Jim Alpez</p>
             <p className="text-xs" style={{ color: "var(--th-text-muted)" }}>Admin</p>
           </div>
         </Link>
