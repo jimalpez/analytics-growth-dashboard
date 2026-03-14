@@ -17,7 +17,7 @@ export default function ProfilePage() {
         style={{ borderColor: "var(--th-border)", backgroundColor: "var(--th-card)" }}
       >
         <div className="mb-8 flex items-center gap-6">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--color-primary)]">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary">
             <span className="text-2xl font-bold text-white">
               {user?.name
                 ?.split(" ")
@@ -28,7 +28,7 @@ export default function ProfilePage() {
           <div>
             <h2 className="text-xl font-bold" style={{ color: "var(--th-text)" }}>{user?.name ?? "Loading..."}</h2>
             <p style={{ color: "var(--th-text-secondary)" }}>{user?.email}</p>
-            <span className="mt-1 inline-block rounded-full bg-[var(--color-primary)]/20 px-3 py-0.5 text-xs font-medium capitalize text-[var(--color-primary-light)]">
+            <span className="mt-1 inline-block rounded-full bg-primary/20 px-3 py-0.5 text-xs font-medium capitalize text-primary-light">
               {user?.role}
             </span>
           </div>
@@ -89,7 +89,7 @@ export default function ProfilePage() {
               }}
             />
           </div>
-          <button className="rounded-lg bg-[var(--color-primary)] px-6 py-2.5 font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)]">
+          <button className="rounded-lg bg-primary px-6 py-2.5 font-medium text-white transition-colors hover:bg-primary-dark">
             Save Changes
           </button>
         </div>

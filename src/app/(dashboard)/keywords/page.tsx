@@ -75,7 +75,7 @@ export default function KeywordsPage() {
                 const change = item.change;
                 return (
                   <span
-                    className={`flex items-center gap-1 font-medium ${change > 0 ? "text-[var(--color-success)]" : change < 0 ? "text-[var(--color-danger)]" : ""}`}
+                    className={`flex items-center gap-1 font-medium ${change > 0 ? "text-success" : change < 0 ? "text-danger" : ""}`}
                     style={change === 0 ? { color: "var(--th-text-secondary)" } : undefined}
                   >
                     {change > 0 && (

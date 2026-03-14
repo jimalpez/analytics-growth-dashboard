@@ -25,7 +25,7 @@ export function StatsCard({ title, value, trend, icon }: StatsCardProps) {
           {trend !== undefined && (
             <div className="mt-2 flex items-center gap-1">
               <span
-                className={`text-sm font-medium ${trend >= 0 ? "text-[var(--color-success)]" : "text-[var(--color-danger)]"}`}
+                className={`text-sm font-medium ${trend >= 0 ? "text-success" : "text-danger"}`}
               >
                 {trend >= 0 ? "+" : ""}
                 {trend}%
@@ -35,7 +35,7 @@ export function StatsCard({ title, value, trend, icon }: StatsCardProps) {
           )}
         </div>
         <div
-          className="flex h-12 w-12 items-center justify-center rounded-lg text-[var(--color-primary-light)]"
+          className="flex h-12 w-12 items-center justify-center rounded-lg text-primary-light"
           style={{ backgroundColor: "var(--th-icon-bg)" }}
         >
           {icon}

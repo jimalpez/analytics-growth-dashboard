@@ -60,7 +60,7 @@ export default function AdminUsersPage() {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="rounded-lg bg-[var(--color-primary)] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+          className="rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
         >
           + Add User
         </button>
@@ -141,7 +141,7 @@ export default function AdminUsersPage() {
                 <button
                   type="submit"
                   disabled={createUser.isPending}
-                  className="rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)] disabled:opacity-50"
+                  className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
                 >
                   {createUser.isPending ? "Adding..." : "Add User"}
                 </button>
@@ -178,8 +178,8 @@ export default function AdminUsersPage() {
                 >
                   <td className="whitespace-nowrap px-4 py-3 text-sm" style={{ color: "var(--th-text-secondary)" }}>
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary)]/20">
-                        <span className="text-xs font-bold text-[var(--color-primary-light)]">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20">
+                        <span className="text-xs font-bold text-primary-light">
                           {user.name
                             .split(" ")
                             .map((n) => n[0])
@@ -223,7 +223,7 @@ export default function AdminUsersPage() {
                         <button
                           onClick={() => saveRole(user.id)}
                           disabled={updateRole.isPending}
-                          className="rounded-md bg-[var(--color-success)] px-3 py-1 text-xs font-medium text-white transition-colors disabled:opacity-50"
+                          className="rounded-md bg-success px-3 py-1 text-xs font-medium text-white transition-colors disabled:opacity-50"
                         >
                           {updateRole.isPending ? "Saving..." : "Save"}
                         </button>

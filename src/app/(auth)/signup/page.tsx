@@ -5,7 +5,7 @@ export default function SignupPage() {
     <div className="flex min-h-screen items-center justify-center px-4" style={{ backgroundColor: "var(--th-bg)" }}>
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary)]">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
             <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
@@ -24,7 +24,7 @@ export default function SignupPage() {
               <input
                 type="text"
                 placeholder="John Doe"
-                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 style={{
                   borderColor: "var(--th-border)",
                   backgroundColor: "var(--th-input-bg)",
@@ -37,7 +37,7 @@ export default function SignupPage() {
               <input
                 type="email"
                 placeholder="you@example.com"
-                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 style={{
                   borderColor: "var(--th-border)",
                   backgroundColor: "var(--th-input-bg)",
@@ -50,7 +50,7 @@ export default function SignupPage() {
               <input
                 type="password"
                 placeholder="Create a password"
-                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 style={{
                   borderColor: "var(--th-border)",
                   backgroundColor: "var(--th-input-bg)",
@@ -63,7 +63,7 @@ export default function SignupPage() {
               <input
                 type="password"
                 placeholder="Confirm your password"
-                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full rounded-lg border px-4 py-2.5 outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 style={{
                   borderColor: "var(--th-border)",
                   backgroundColor: "var(--th-input-bg)",
@@ -73,7 +73,7 @@ export default function SignupPage() {
             </div>
             <Link
               href="/dashboard"
-              className="block w-full rounded-lg bg-[var(--color-primary)] py-2.5 text-center font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+              className="block w-full rounded-lg bg-primary py-2.5 text-center font-medium text-white transition-colors hover:bg-primary-dark"
             >
               Create Account
             </Link>
@@ -82,7 +82,7 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-sm" style={{ color: "var(--th-text-secondary)" }}>
           Already have an account?{" "}
-          <Link href="/login" className="text-[var(--color-primary-light)] hover:underline">
+          <Link href="/login" className="text-primary-light hover:underline">
             Sign in
           </Link>
         </p>

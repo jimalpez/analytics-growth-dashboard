@@ -75,7 +75,7 @@ export function Sidebar() {
     >
       {/* Logo */}
       <div className="flex h-16 items-center gap-2 border-b px-6" style={{ borderColor: "var(--th-border)" }}>
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-primary)]">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
           <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
           </svg>
@@ -93,7 +93,7 @@ export function Sidebar() {
               href={item.href}
               className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-primary text-white"
                   : "nav-link"
               }`}
             >
@@ -115,7 +115,7 @@ export function Sidebar() {
               aria-label={`Switch to ${opt.label} theme`}
               className={`flex flex-1 items-center justify-center gap-1.5 rounded-md px-2 py-1.5 text-xs font-medium transition-colors ${
                 theme === opt.value
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-primary text-white"
                   : "nav-link"
               }`}
             >
@@ -132,7 +132,7 @@ export function Sidebar() {
           href="/profile"
           className="nav-link flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary)]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
             <span className="text-xs font-bold text-white">AM</span>
           </div>
           <div>

@@ -9,7 +9,7 @@ export default function LandingPage() {
       <nav className="border-b" style={{ borderColor: "var(--th-border)" }}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-primary)]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
@@ -22,7 +22,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/signup"
-              className="rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+              className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
             >
               Start Free Trial
             </Link>
@@ -34,7 +34,7 @@ export default function LandingPage() {
       <section className="mx-auto max-w-7xl px-6 py-24 text-center">
         <h1 className="mx-auto max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl" style={{ color: "var(--th-text)" }}>
           Website Analytics &{" "}
-          <span className="bg-linear-to-r from-[var(--color-primary-light)] to-[var(--color-primary)] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-primary-light to-primary bg-clip-text text-transparent">
             Lead Management
           </span>{" "}
           Dashboard
@@ -46,7 +46,7 @@ export default function LandingPage() {
         <div className="mt-10 flex items-center justify-center gap-4">
           <Link
             href="/signup"
-            className="rounded-lg bg-[var(--color-primary)] px-6 py-3 font-medium text-white transition-colors hover:bg-[var(--color-primary-dark)]"
+            className="rounded-lg bg-primary px-6 py-3 font-medium text-white transition-colors hover:bg-primary-dark"
           >
             Get Started Free
           </Link>
@@ -103,7 +103,7 @@ export default function LandingPage() {
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--th-card)")}
             >
               <div
-                className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-[var(--color-primary-light)]"
+                className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-primary-light"
                 style={{ backgroundColor: "var(--th-icon-bg)" }}
               >
                 {feature.icon}

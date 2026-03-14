@@ -122,7 +122,7 @@ export default function DashboardPage() {
                 render: (item) => {
                   const change = item.change;
                   return (
-                    <span className={change > 0 ? "text-[var(--color-success)]" : change < 0 ? "text-[var(--color-danger)]" : ""} style={change === 0 ? { color: "var(--th-text-secondary)" } : undefined}>
+                    <span className={change > 0 ? "text-success" : change < 0 ? "text-danger" : ""} style={change === 0 ? { color: "var(--th-text-secondary)" } : undefined}>
                       {change > 0 ? `+${change}` : change === 0 ? "-" : change}
                     </span>
                   );
