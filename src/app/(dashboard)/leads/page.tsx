@@ -1,13 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import { api } from "@/trpc/react";
 import { StatsCard } from "@/app/_components/stats-card";
 import { DataTable } from "@/app/_components/data-table";
 import { StatusBadge } from "@/app/_components/status-badge";
 
+const STATUSES = ["all", "new", "contacted", "qualified", "converted", "lost"] as const;
+type StatusFilter = (typeof STATUSES)[number];
+
 export default function LeadsPage() {
+  const [activeFilter, setActiveFilter] = useState<StatusFilter>("all");
   const { data: leads } = api.leads.getAll.useQuery();
   const { data: stats } = api.leads.getStats.useQuery();
+
+  const filteredLeads = leads?.filter(
+    (lead) => activeFilter === "all" || lead.status === activeFilter,
+  );
 
   return (
     <div>
@@ -57,35 +66,41 @@ export default function LeadsPage() {
       </div>
 
       <div className="mb-6 flex gap-2">
-        {["all", "new", "contacted", "qualified", "converted", "lost"].map(
-          (status) => (
+        {STATUSES.map((status) => {
+          const isActive = activeFilter === status;
+          return (
             <button
               key={status}
+              onClick={() => setActiveFilter(status)}
               className="rounded-lg border px-4 py-2 text-sm capitalize transition-colors"
               style={{
-                borderColor: "var(--th-border)",
-                backgroundColor: "var(--th-card)",
-                color: "var(--th-text-secondary)",
+                borderColor: isActive ? "var(--th-accent)" : "var(--th-border)",
+                backgroundColor: isActive ? "var(--th-accent)" : "var(--th-card)",
+                color: isActive ? "#fff" : "var(--th-text-secondary)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "var(--th-card-hover)";
-                e.currentTarget.style.color = "var(--th-text)";
+                if (!isActive) {
+                  e.currentTarget.style.backgroundColor = "var(--th-card-hover)";
+                  e.currentTarget.style.color = "var(--th-text)";
+                }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "var(--th-card)";
-                e.currentTarget.style.color = "var(--th-text-secondary)";
+                if (!isActive) {
+                  e.currentTarget.style.backgroundColor = "var(--th-card)";
+                  e.currentTarget.style.color = "var(--th-text-secondary)";
+                }
               }}
             >
               {status}
             </button>
-          ),
-        )}
+          );
+        })}
       </div>
 
-      {leads && (
+      {filteredLeads && (
         <DataTable
-          title="All Leads"
-          data={leads}
+          title={activeFilter === "all" ? "All Leads" : `${activeFilter.charAt(0).toUpperCase() + activeFilter.slice(1)} Leads`}
+          data={filteredLeads}
           columns={[
             { key: "name", header: "Name" },
             { key: "email", header: "Email" },
